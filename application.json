@@ -1,0 +1,28 @@
+[
+    {
+        "settings": [ "master" ],
+        "specs": {
+            "myws": {
+                "type": "myws"
+            }
+        },
+        "log":{
+            "client":{
+                "level":"debug",
+                "yui":true,
+                "timestamp": false
+            },
+            "server":{
+                "level":"debug",
+                "yui":true,
+                "timestamp": true
+            }
+        }
+    },
+    {
+        "settings": [ "environment:development" ],
+        "staticHandling": {
+            "forceUpdate": true
+        }
+    }
+]

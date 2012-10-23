@@ -1,0 +1,13 @@
+[{
+    "settings": [ "master" ],
+    "myws yqlTermExtract": {
+        "verbs": ["post"],
+        "path": "/yql_term_extract",
+        "call": "myws.yqlTermExtract"
+    },
+    "myws text": {
+        "verbs": ["get"],
+        "path": "/text",
+        "call": "myws.text"
+    }
+}]
