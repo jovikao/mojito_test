@@ -2,6 +2,7 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
+var textUrlBase = 'http://ohd.eventloops.in:8666';
 YUI.add('mywsModelYql', function(Y, NAME) {
 /**
  * The mywsModelFoo module.
@@ -35,13 +36,14 @@ YUI.add('mywsModelYql', function(Y, NAME) {
             cacheModel.set(txtApcKey, content);
             var query = ['select * from search.termextract where context in ',
                 "(select content from html where url='",
-                'http://ohd.eventloops.in:8666/text?key=',
+                textUrlBase,
+                '/text?key=',
                 txtApcKeySuffix,
                 "')  and query='madonna'"].join('');
             Y.log('yql query:' + query);
             Y.YQL(query, function(rawYql) {
                 Y.log('yql result:' + JSON.stringify(rawYql));
-                if(rawYql.query && rawYql.query.count != 0){
+                if(rawYql.query && rawYql.query.count !== 0){
                     var count = rawYql.query.count;
                     var result = rawYql.query.results.Result;
                     if(count == 1){
